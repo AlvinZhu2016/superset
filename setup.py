@@ -45,6 +45,7 @@ setup(
         'boto3==1.4.4',
         'celery==3.1.23',
         'cryptography==1.8.1',
+        'flake8==3.3.0',
         'flask-appbuilder==1.8.1',
         'flask-cache==0.13.1',
         'flask-migrate==2.0.3',
@@ -74,7 +75,6 @@ setup(
         'cors': ['Flask-Cors>=2.0.0'],
     },
     tests_require=[
-        'codeclimate-test-reporter',
         'coverage',
         'mock',
         'nose',

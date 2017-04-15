@@ -9,4 +9,4 @@ set -e
 superset/bin/superset db upgrade
 superset/bin/superset version -v
 python setup.py nosetests
-coveralls
+python setup.py nosetests --with-xunit --with-coverage --cover-erase --cover-xml --cover-branches

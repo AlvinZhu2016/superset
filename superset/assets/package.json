@@ -8,12 +8,12 @@
     "test": "spec"
   },
   "scripts": {
-    "test": "mocha --require ignore-styles --compilers js:babel-core/register --require spec/helpers/browser.js --recursive spec/**/*_spec.*",
-    "cover": "babel-node ./node_modules/.bin/istanbul cover _mocha -- --require spec/helpers/browser.js --recursive spec/**/*_spec.*",
+    "test": "mocha --require ignore-styles --compilers js:babel-core/register --require spec/helpers/browser.js --recursive spec/**/*_spec.* --reporter=xunit-file",
+    "cover": "babel-node ./node_modules/.bin/istanbul cover  --report cobertura  _mocha -- --require spec/helpers/browser.js --recursive spec/**/*_spec.*",
     "dev": "NODE_ENV=dev webpack --watch --colors --progress --debug --output-pathinfo --devtool inline-source-map",
     "prod": "NODE_ENV=production node --max_old_space_size=4096 ./node_modules/webpack/bin/webpack.js -p --colors --progress",
     "build": "NODE_ENV=production webpack --colors --progress",
-    "lint": "eslint --ignore-path=.eslintignore --ext .js,.jsx .",
+    "lint": "eslint --format checkstyle --output-file analysis.xml --ignore-path=.eslintignore --ext .js,.jsx .",
     "sync-backend": "babel-node --presets es2015 javascripts/syncBackend.js"
   },
   "repository": {
@@ -132,6 +132,7 @@
     "transform-loader": "^0.2.3",
     "url-loader": "^0.5.7",
     "webpack": "^2.3.3",
-    "webworkify-webpack": "2.0.4"
+    "webworkify-webpack": "2.0.4",
+    "xunit-file": "1.0.0"
   }
 }
